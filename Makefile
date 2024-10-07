@@ -4,7 +4,10 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	libft.a
 
-MY_SOURCES	=	*.c
+MY_SOURCES	=	ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c
+
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
