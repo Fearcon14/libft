@@ -6,11 +6,11 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:28:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/07 17:38:08 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/07 17:58:32 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
