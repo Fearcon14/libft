@@ -6,8 +6,8 @@ NAME	=	libft.a
 
 MY_SOURCES	=	ft_isalpha.c \
 				ft_isdigit.c \
-				ft_isalnum.c
-
+				ft_isalnum.c \
+				ft_isascii.c
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
