@@ -10,7 +10,8 @@ MY_SOURCES	=	ft_isalpha.c	\
 				ft_isascii.c	\
 				ft_isprint.c	\
 				ft_strlen.c		\
-				ft_memset.c
+				ft_memset.c		\
+				ft_bzero.c
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
