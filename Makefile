@@ -16,7 +16,8 @@ MY_SOURCES	=	ft_isalpha.c	\
 				ft_memmove.c	\
 				ft_strlcpy.c	\
 				ft_strlcat.c	\
-				ft_toupper.c
+				ft_toupper.c	\
+				ft_tolower.c
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
