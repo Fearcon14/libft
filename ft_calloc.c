@@ -6,16 +6,19 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:35:38 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 12:01:20 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/10 13:22:48 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*obj;
+	void	*obj;
 
-	obj = (char *)malloc(count * size * sizeof(char));
-	// TODO add malloc protection
+	obj = malloc(count * size * sizeof(char));
+	if (!obj)
+		return (NULL);
+	ft_bzero(obj, size * count);
+	return (obj);
 }
