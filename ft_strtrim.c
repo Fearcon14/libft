@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:30:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 15:29:35 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/10 15:35:05 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	s1_len = ft_strlen(s1);
 	left = 0;
-	while (ft_strchr(set, s1[left]) && s1[left])
+	right = 0;
+	while (s1[left] && ft_strchr(set, s1[left]))
 		left++;
-	right = s1_len - 1;
-	while (ft_strchr(set, s1[right]) && right > left)
+	// printf("left: %zu\n", left);
+	if (s1_len > 0)
+		right = s1_len - 1;
+	// printf("right: %zu\n", right);
+	while (right > left && ft_strchr(set, s1[right]))
 		right--;
 	res = (char *)malloc((right - left + 2) * sizeof(char));
 	if (!res)
