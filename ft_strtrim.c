@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:30:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 15:12:06 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/10 15:29:35 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[left]) && s1[left])
 		left++;
 	right = s1_len - 1;
-	while (ft_strchr(set, s1[right]))
+	while (ft_strchr(set, s1[right]) && right > left)
 		right--;
-	if (!s1_len || !ft_strlen(set))
-		return ((char *)s1);
-	res = (char *)malloc((right - left + 1) * sizeof(char));
+	res = (char *)malloc((right - left + 2) * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (left <= right)
+	while (i + left <= right)
 	{
-		res[i] = s1[left];
-		// printf("%c", res[i]);
+		res[i] = s1[i + left];
 		i++;
-		left++;
 	}
+	if (left == right)
+		i--;
 	res[i] = '\0';
-	// printf("%s", res);
 	return (res);
 }
 
 // int	main(void)
 // {
-// 	char	s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+// 	char	s1[] = "";
 
-// 	ft_strtrim(s1, " lte");
+// 	ft_strtrim(s1, "");
 // }
