@@ -30,7 +30,8 @@ MY_SOURCES	=	ft_isalpha.c	\
 				ft_substr.c		\
 				ft_strjoin.c	\
 				ft_strtrim.c	\
-				ft_split.c
+				ft_split.c		\
+				ft_itoa.c
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
