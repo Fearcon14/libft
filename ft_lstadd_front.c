@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:36:51 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 11:40:05 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 12:41:43 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
+	*lst = new;
 }
