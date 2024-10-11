@@ -36,10 +36,14 @@ MY_SOURCES	=	ft_isalpha.c	\
 				ft_striteri.c	\
 				ft_putchar_fd.c	\
 				ft_putstr_fd.c	\
-				ft_putendl_fd.c	\
+				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
+MY_BONUS	=	ft_lstnew.c
+
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
+
+BONUS_OBJECTS	=	$(MY_BONUS:%.c=%.o)
 
 %.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
@@ -50,11 +54,15 @@ $(NAME): $(MY_OBJECTS)
 all: $(NAME)
 
 clean:
-		rm -f $(MY_OBJECTS)
+		rm -f $(MY_OBJECTS) $(BONUS_OBJECTS)
 
 fclean:	clean
 		rm -f $(NAME)
 
 re:		fclean all
 
-.PHONY: all clean fclean re
+bonus: $(BONUS_OBJECTS)
+	$(MAKE) all
+	ar rcs $(NAME) $(BONUS_OBJECTS)
+
+.PHONY: all clean fclean re bonus
