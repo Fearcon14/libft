@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:38:53 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 18:46:14 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 14:58:30 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ static int	find_divisor(int n)
 	return (divisor);
 }
 
+/*
+Outputs the integer ’n’ to the given file descriptor
+*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;

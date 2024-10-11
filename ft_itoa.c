@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:17:26 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 18:01:16 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 14:54:48 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ static size_t	ft_nbrlen(int nbr, size_t *sign)
 	return (len);
 }
 
+/*
+Allocates (with malloc(3)) and returns a string
+representing the integer received as an argument
+Negative numbers must be handled
+Return
+The string representing the integer
+NULL if the allocation fails
+*/
 char	*ft_itoa(int n)
 {
 	char	*res;
