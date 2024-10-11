@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:29:41 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 17:14:03 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 10:22:03 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			res[i] = ft_getstr(s, c);
-			if (!res)
+			if (!res[i])
 				return (ft_free_res(res, i - 1), NULL);
 		}
 		while (*s && *s != c)
