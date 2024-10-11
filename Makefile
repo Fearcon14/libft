@@ -40,7 +40,8 @@ MY_SOURCES	=	ft_isalpha.c	\
 				ft_putnbr_fd.c
 
 MY_BONUS	=	ft_lstnew.c			\
-				ft_lstadd_front.c
+				ft_lstadd_front.c	\
+				ft_lstsize.c
 
 MY_OBJECTS	=	$(MY_SOURCES:%.c=%.o)
 
