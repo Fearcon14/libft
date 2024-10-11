@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:30:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 15:46:51 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 10:04:59 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
-	size_t	left;
-	size_t	right;
-	size_t	i;
+	int		left;
+	int		right;
+	int		i;
 
 	left = 0;
 	right = 0;
 	while (s1[left] && ft_strchr(set, s1[left]))
 		left++;
-	if (ft_strlen(s1) > 0)
+	if (ft_strlen(s1) >= 0)
 		right = ft_strlen(s1) - 1;
 	while (right > left && ft_strchr(set, s1[right]))
 		right--;
