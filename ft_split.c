@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:29:41 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 10:22:03 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 14:54:04 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,14 @@ static void	ft_free_res(char **res, size_t i)
 	free(res);
 }
 
+/*
+Allocates (with malloc(3)) and returns an array of strings
+obtained by splitting ’s’ using the character ’c’ as a delimiter.
+The array must end with a NULL pointer
+Return
+The array of new strings resulting from the split
+NULL if the allocation fails
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**res;

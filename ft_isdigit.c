@@ -6,10 +6,16 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:28:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/07 18:00:46 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 14:16:32 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Check if c is a digit
+Return
+TRUE	1
+FALSE	0
+*/
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

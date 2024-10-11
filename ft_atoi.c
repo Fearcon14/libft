@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:58:52 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/10 10:29:36 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/11 14:46:14 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ static int	ft_isnumber(char c)
 	return (0);
 }
 
+/*
+Converts the initial portion of the string pointed to by str to int
+Return
+The converted integer
+*/
 int	ft_atoi(const char *str)
 {
 	int	result;
