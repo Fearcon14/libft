@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:02:52 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:56:19 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:21:06 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	len = ft_strlen(s);
-	res = (char *)malloc((len + 1) * sizeof(char));
+	res = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -37,6 +37,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	res[i] = '\0';
 	return (res);
 }

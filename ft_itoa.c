@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:17:26 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:54:48 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:26:41 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,9 @@ char	*ft_itoa(int n)
 	long	nbr;
 
 	len = ft_nbrlen(n, &sign);
-	res = (char *)malloc((len + 1) * sizeof(char));
+	res = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
-	res[len] = '\0';
 	nbr = n;
 	if (n < 0)
 		nbr = -nbr;
