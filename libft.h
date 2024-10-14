@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:28:00 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/14 13:30:39 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 16:28:06 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+/*
+TODO: change malloc with calloc where it makes sense
+TODO: look if catching NULL inputs makes sense for certain functions(ft_split)
+*/
 typedef struct s_list
 {
 	void			*content;
