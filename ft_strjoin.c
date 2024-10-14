@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:16:48 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:51:56 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:21:11 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	res = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
+	res = (char *)ft_calloc((s1_len + s2_len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -40,6 +40,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			res[s1_len + i] = s2[i];
 		i++;
 	}
-	res[i] = '\0';
 	return (res);
 }

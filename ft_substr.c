@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:49:32 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:51:11 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:22:45 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s) - start;
 	if (start >= ft_strlen(s))
 		len = 0;
-	res = (char *)malloc((len + 1) * sizeof(char));
+	res = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;

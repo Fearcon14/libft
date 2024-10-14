@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:26:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:50:08 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:21:18 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	len = ft_strlen(s1);
-	res = (char *)malloc((len + 1) * sizeof(char));
+	res = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (i <= len)
+	while (i < len)
 	{
 		res[i] = s1[i];
 		i++;

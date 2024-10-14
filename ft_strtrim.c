@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:30:57 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:53:00 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:22:51 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		right = ft_strlen(s1) - 1;
 	while (right > left && ft_strchr(set, s1[right]))
 		right--;
-	res = (char *)malloc((right - left + 2) * sizeof(char));
+	res = (char *)ft_calloc((right - left + 2), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -44,6 +44,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		res[i] = s1[i + left];
 		i++;
 	}
-	res[i] = '\0';
 	return (res);
 }

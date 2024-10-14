@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:29:41 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/14 14:18:31 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 18:22:50 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*ft_getstr(const char *s, char c)
 	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
-	res = (char *)malloc((len + 1) * sizeof(char));
+	res = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -47,7 +47,6 @@ static char	*ft_getstr(const char *s, char c)
 		res[i] = s[i];
 		i++;
 	}
-	res[i] = '\0';
 	return (res);
 }
 
@@ -73,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	nbr_str = ft_countstr(s, c);
-	res = (char **)malloc((nbr_str + 1) * sizeof(char *));
+	res = (char **)ft_calloc((nbr_str + 1), sizeof(char *));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -91,6 +90,5 @@ char	**ft_split(char const *s, char c)
 			s++;
 		i++;
 	}
-	res[i] = NULL;
 	return (res);
 }
