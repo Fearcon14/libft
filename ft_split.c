@@ -6,7 +6,7 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:29:41 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:54:04 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/14 14:18:31 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static char	*ft_getstr(const char *s, char c)
 
 static void	ft_free_res(char **res, size_t i)
 {
-	while (i >= 0)
-		free(res[i--]);
+	while (i > 0)
+		free(res[--i]);
 	free(res);
 }
 
@@ -84,8 +84,8 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			res[i] = ft_getstr(s, c);
-			if (!res[i])
-				return (ft_free_res(res, i - 1), NULL);
+			if (!(res[i]))
+				return (ft_free_res(res, i), NULL);
 		}
 		while (*s && *s != c)
 			s++;
