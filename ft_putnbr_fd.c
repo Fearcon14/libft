@@ -6,53 +6,44 @@
 /*   By: ksinn <ksinn@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:38:53 by ksinn             #+#    #+#             */
-/*   Updated: 2024/10/11 14:58:30 by ksinn            ###   ########.fr       */
+/*   Updated: 2024/10/16 15:11:11 by ksinn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_divisor(int n)
+static void	ft_negative(long *nbr, int *sign)
 {
-	int	divisor;
-
-	divisor = 1;
-	while (n >= 10)
+	if (*nbr < 0)
 	{
-		divisor *= 10;
-		n /= 10;
+		*sign = 1;
+		*nbr = -(*nbr);
 	}
-	return (divisor);
 }
 
 /*
 Outputs the integer ’n’ to the given file descriptor
 */
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
-	char	digit;
-	int		divisor;
+	char	result[12];
+	long	nbr;
+	int		sign;
+	int		i;
 
-	if (n == 0 || n == -2147483648)
+	nbr = n;
+	if (nbr == 0)
+		return (write(fd, "0", 1));
+	sign = 0;
+	ft_negative(&nbr, &sign);
+	i = 11;
+	result[i] = '\0';
+	while (nbr > 0)
 	{
-		if (n == 0)
-			write(fd, "0", 1);
-		if (n == -2147483648)
-			write(fd, "-2147483648", 11);
-		return ;
+		result[--i] = nbr % 10 + '0';
+		nbr /= 10;
 	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-	}
-	divisor = find_divisor(n);
-	while (divisor > 0)
-	{
-		digit = '0';
-		digit += n / divisor;
-		write(fd, &digit, 1);
-		n %= divisor;
-		divisor /= 10;
-	}
+	if (sign)
+		result[--i] = '-';
+	return (write(fd, &result[i], 12 - i - 1));
 }
