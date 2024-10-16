@@ -57,7 +57,7 @@ BONUS_OBJECTS	=	$(MY_BONUS:%.c=%.o)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(MY_OBJECTS)
-	ar rcs $(NAME) $(MY_OBJECTS)
+	ar -rcs $(NAME) $(MY_OBJECTS)
 
 all: $(NAME)
 
@@ -71,6 +71,6 @@ re:		fclean all
 
 bonus: $(BONUS_OBJECTS)
 	$(MAKE) all
-	ar rcs $(NAME) $(BONUS_OBJECTS)
+	ar -rcs $(NAME) $(BONUS_OBJECTS)
 
 .PHONY: all clean fclean re bonus
