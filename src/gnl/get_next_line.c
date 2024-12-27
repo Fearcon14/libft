@@ -103,6 +103,12 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*buffer;
 
+	if (fd == -1)
+	{
+		free(buffer);
+		buffer = NULL;
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_fill_buffer(fd, buffer);
