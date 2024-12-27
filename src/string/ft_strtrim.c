@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	right = 0;
 	while (s1[left] && ft_strchr(set, s1[left]))
 		left++;
-	if (ft_strlen(s1) >= 0)
+	if ((long long)ft_strlen(s1) >= 0)
 		right = ft_strlen(s1) - 1;
 	while (right > left && ft_strchr(set, s1[right]))
 		right--;
