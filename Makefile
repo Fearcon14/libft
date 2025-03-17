@@ -2,7 +2,7 @@ NAME = libft.a
 SRC_DIR = src
 OUT_DIR = out
 
-VPATH = src/string:src/mem:src/put_utils:src/lst:src/printf:src/gnl
+VPATH = src/string:src/mem:src/put_utils:src/lst:src/printf:src/gnl:src/gc
 
 STRING_SRCS =		ft_atoi.c			\
 					ft_isalnum.c		\
@@ -57,10 +57,14 @@ PRINTF_SRCS = 		ft_printf.c			\
 					ft_print_u.c		\
 					ft_print_x.c
 
-GNL_SRCS =	get_next_line.c				\
-			get_next_line_utils.c
+GNL_SRCS =			get_next_line.c			\
+					get_next_line_utils.c
 
-SRCS = $(STRING_SRCS) $(MEM_SRCS) $(PUT_UTILS_SRCS) $(LST_SRCS) $(PRINTF_SRCS) $(GNL_SRCS)
+GC_SRCS =			gc_holder.c			\
+					gc_malloc.c			\
+					gc_free_context.c
+
+SRCS = $(STRING_SRCS) $(MEM_SRCS) $(PUT_UTILS_SRCS) $(LST_SRCS) $(PRINTF_SRCS) $(GNL_SRCS) $(GC_SRCS)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
